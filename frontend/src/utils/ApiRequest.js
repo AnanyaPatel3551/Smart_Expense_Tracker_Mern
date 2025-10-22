@@ -1,6 +1,6 @@
 //const host = "https://expense-tracker-app-knl1.onrender.com";
 // const host = "http://localhost:5000";
-export const host = "http://localhost:5001"; // change after backend deploy
+export const host = "https://smart-expense-tracker-mern-gprii1k4k-ananya-patels-projects.vercel.app"; // change after backend deploy
 
 export const setAvatarAPI = `${host}/api/auth/setAvatar`;
 export const registerAPI = `${host}/api/auth/register`;
