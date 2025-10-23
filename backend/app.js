@@ -18,7 +18,8 @@ connectDB();
 
 // Allowed Origins (add your live frontend URL here)
 const allowedOrigins = [
-  "http://localhost:3000", // local frontend
+  "http://localhost:3000",
+   "http://localhost:3001", // local frontend
   "https://your-live-frontend-url.vercel.app", // replace with your deployed frontend URL
 ];
 
