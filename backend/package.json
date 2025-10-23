@@ -2,8 +2,10 @@
   "name": "expense-tracker-backend",
   "version": "1.0.0",
   "description": "Backend for Smart Expense Tracker MERN App",
+  "type": "module",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "start": "node app.js"
   },
   "keywords": [],
@@ -22,5 +24,8 @@
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
