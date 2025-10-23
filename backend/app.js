@@ -20,7 +20,7 @@ connectDB();
 const allowedOrigins = [
   "http://localhost:3000",
    "http://localhost:3001", // local frontend
-  "https://your-live-frontend-url.vercel.app", // replace with your deployed frontend URL
+  "https://smart-expense-tracker-mern-r576-n3buer2v8.vercel.app", // replace with your deployed frontend URL
 ];
 
 // Middleware
