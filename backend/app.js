@@ -1,13 +1,11 @@
 import express from "express";
 import cors from "cors";
 import { connectDB } from "./DB/Database.js";
-import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import transactionRoutes from "./Routers/Transactions.js";
 import userRoutes from "./Routers/userRouter.js";
-import path from "path";
 
 dotenv.config();
 const app = express();
@@ -18,27 +16,25 @@ const port = process.env.PORT || 5001;
 // Connect to MongoDB
 connectDB();
 
-// Allowed Origins
+// Allowed Origins (add your live frontend URL here)
 const allowedOrigins = [
-  "https://main.d1sj7cd70hlter.amplifyapp.com",
-  "https://expense-tracker-app-three-beryl.vercel.app",
-  "http://localhost:3001",
+  "http://localhost:3000", // local frontend
+  "https://your-live-frontend-url.vercel.app", // replace with your deployed frontend URL
 ];
 
 // Middleware
-app.use(express.json());
+app.use(express.json()); // parse JSON requests
+
 app.use(
   cors({
     origin: allowedOrigins,
-    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("dev"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routers
 app.use("/api/v1", transactionRoutes);
