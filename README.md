@@ -8,26 +8,27 @@ This project demonstrates a practical implementation of a full-stack web applica
 
 ## Features
 
-- **User Authentication:** Secure signup and login using JWT tokens.
-- **Expense Management:** Users can add, edit, and delete transactions.
-- **Budget Tracking:** Users can set monthly spending limits and track expenses against them.
-- **Avatar Selection:** Users can personalize their account with avatars.
-- **Responsive Design:** The application is usable on desktop and mobile devices.
+-   **User Authentication:** Secure signup and login using JWT tokens.
+-   **Expense Management:** Users can add, edit, and delete transactions.
+-   **Budget Tracking:** Users can set monthly spending limits and track expenses against them.
+-   **Avatar Selection:** Users can personalize their account with avatars.
+-   **Responsive Design:** The application is usable on desktop and mobile devices.
 
 ---
 
 ## Tech Stack
 
-- **Frontend:** React, React Router, Axios, CSS
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB with Mongoose
-- **Authentication:** JSON Web Tokens (JWT)
-- **Deployment:** Render for backend, Netlify/Vercel for frontend
+-   **Frontend:** React, React Router, Axios, CSS
+-   **Backend:** Node.js, Express.js
+-   **Database:** MongoDB with Mongoose
+-   **Authentication:** JSON Web Tokens (JWT)
+-   **Deployment:** Render for backend, Netlify/Vercel for frontend
 
 ---
 
 ## Project Structure
 
+```text
 Expense-Tracker-App/
 │
 ├─ backend/ # Node.js + Express backend
@@ -47,96 +48,95 @@ Expense-Tracker-App/
 ├─ .env # Environment variables (backend)
 └─ README.md
 
-
----
-
 ## Installation and Setup
 
 ### Backend
 
-1. Navigate to the backend directory:
+1.  Navigate to the backend directory:
+    ```bash
+    cd backend
+    ```
 
-```bash
-cd backend
-Install dependencies:
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
 
-bash
-Copy code
-npm install
-Create a .env file with the following variables:
+3.  Create a `.env` file with the following variables:
+    ```env
+    PORT=5000
+    MONGO_URI=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret
+    ```
 
-env
-Copy code
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-Start the backend server:
+4.  Start the backend server:
+    ```bash
+    npm run dev
+    ```
+    The backend server will start on the specified port (default 5000).
 
-bash
-Copy code
-npm run dev
-The backend server will start on the specified port (default 5000).
+### Frontend
 
-Frontend
-Navigate to the frontend directory:
+1.  Navigate to the frontend directory:
+    ```bash
+    cd frontend
+    ```
 
-bash
-Copy code
-cd frontend
-Install dependencies:
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
 
-bash
-Copy code
-npm install
-Start the frontend development server:
+3.  Start the frontend development server:
+    ```bash
+    npm start
+    ```
+    The React app will start, typically on port 3000. If the port is in use, it will prompt to use another port (e.g., 3001).
 
-bash
-Copy code
-npm start
-The React app will start, typically on port 3000. If the port is in use, it will prompt to use another port (e.g., 3001).
+---
 
-API Endpoints
-Feature	Endpoint	Method
-Register	/api/auth/register	POST
-Login	/api/auth/login	POST
-Set Avatar	/api/auth/setAvatar/:userId	POST
-Add Transaction	/api/v1/addTransaction	POST
-Get Transactions	/api/v1/getTransaction	POST
-Edit Transaction	/api/v1/updateTransaction/:id	PUT
-Delete Transaction	/api/v1/deleteTransaction/:id	POST
+## API Endpoints
 
-Note: Replace :userId or :id with the actual user or transaction ID when making requests.
+| Feature | Endpoint | Method |
+| :--- | :--- | :--- |
+| Register | `/api/auth/register` | `POST` |
+| Login | `/api/auth/login` | `POST` |
+| Set Avatar | `/api/auth/setAvatar/:userId` | `POST` |
+| Add Transaction | `/api/v1/addTransaction` | `POST` |
+| Get Transactions | `/api/v1/getTransaction` | `POST` |
+| Edit Transaction | `/api/v1/updateTransaction/:id` | `PUT` |
+| Delete Transaction | `/api/v1/deleteTransaction/:id` | `POST` |
 
-Deployment
+**Note:** Replace `:userId` or `:id` with the actual user or transaction ID when making requests.
+
+---
+
+## Deployment
+
 To make the app accessible online:
 
-Push to GitHub: Keep your latest code in a repository.
+1.  **Push to GitHub:** Keep your latest code in a repository.
+2.  **Deploy Backend on Render:** Connect your GitHub repository, configure environment variables, and deploy the server.
+3.  **Deploy Frontend on Netlify/Vercel:** Connect your GitHub repository and deploy the frontend.
+4.  **Update API URLs:** After deployment, update the `host` variable in `frontend/src/utils/ApiRequest.js` to point to your deployed backend URL.
 
-Deploy Backend on Render: Connect your GitHub repository, configure environment variables, and deploy the server.
+---
 
-Deploy Frontend on Netlify/Vercel: Connect your GitHub repository and deploy the frontend.
+## Why This Project Was Built
 
-Update API URLs: After deployment, update the host variable in frontend/src/utils/ApiRequest.js to point to your deployed backend URL.
-
-Why This Project Was Built
 Smart Expense Tracker was created to provide a practical, real-world example of a full-stack application. It demonstrates how to:
 
-Implement user authentication with JWT.
+-   Implement user authentication with JWT.
+-   Build CRUD operations for transaction management.
+-   Connect a React frontend with an Express backend using Axios.
+-   Work with MongoDB for storing and retrieving user data.
+-   Handle frontend-backend integration and manage environment-specific configurations.
 
-Build CRUD operations for transaction management.
+---
 
-Connect a React frontend with an Express backend using Axios.
+## Future Enhancements
 
-Work with MongoDB for storing and retrieving user data.
-
-Handle frontend-backend integration and manage environment-specific configurations.
-
-Future Enhancements
-Add AI-based spending suggestions and saving tips.
-
-Include charts and graphs for visualizing expenses.
-
-Support multiple currencies.
-
-Implement notifications for exceeding budget limits.
-
+-   Add AI-based spending suggestions and saving tips.
+-   Include charts and graphs for visualizing expenses.
+-   Support multiple currencies.
+-   Implement notifications for exceeding budget limits.
